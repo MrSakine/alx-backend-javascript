@@ -22,6 +22,6 @@ export default class Currency {
 
   displayFullCurrency() {
     // eslint-disable-next-line no-underscore-dangle
-    return `${this._name} (${this._code})`;
+    return `${this.name} (${this.code})`;
   }
 }
