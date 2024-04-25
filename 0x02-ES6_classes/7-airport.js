@@ -6,7 +6,7 @@ export default class Airport {
     this._code = code;
   }
 
-  toString() {
+  get [Symbol.toStringTag]() {
     // eslint-disable-next-line no-underscore-dangle
     return this._code;
   }
