@@ -1,7 +1,7 @@
 export default function cleanSet(set, startString) {
   let res = '';
   set.forEach((value) => {
-    if (startString && value.startsWith(startString)) {
+    if (value.startsWith(startString)) {
       res += `${value.substring(startString.length)}-`;
     }
   });
