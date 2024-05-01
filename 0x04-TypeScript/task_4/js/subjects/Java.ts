@@ -6,7 +6,7 @@ namespace Subjects {
     experienceTeachingJava?: number;
   }
 
-  export class JavaClass extends Subject {
+  export class Java extends Subject {
     getRequirements = () => 'Here is the list of requirements for Java';
     getAvailableTeacher = () => {
       if (!this.teacher?.experienceTeachingJava) return 'No available teacher';

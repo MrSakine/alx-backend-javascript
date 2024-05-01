@@ -6,7 +6,7 @@ namespace Subjects {
     experienceTeachingReact?: number;
   }
 
-  export class ReactClass extends Subject {
+  export class React extends Subject {
     getRequirements = () => 'Here is the list of requirements for React';
     getAvailableTeacher = () => {
       if (!this.teacher?.experienceTeachingReact) return 'No available teacher';
