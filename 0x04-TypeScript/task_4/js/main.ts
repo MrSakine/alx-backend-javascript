@@ -10,6 +10,7 @@ export const react = new Subjects.React();
 export const cTeacher: Subjects.Teacher = {
   firstName: 'John',
   lastName: 'Doe',
+  experienceTeachingC: 10,
 };
 
 cpp.teacher = cTeacher;
