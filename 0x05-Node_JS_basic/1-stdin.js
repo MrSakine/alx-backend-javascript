@@ -1,6 +1,10 @@
-const displayMessage = require("./0-console");
+/**
+ * Using Process stdin
+ */
 
+const displayMessage = require("./0-console");
 process.stdin.setEncoding("utf8");
+
 displayMessage("Welcome to Holberton School, what is your name?");
 process.stdin.on("readable", function () {
   var chunk = process.stdin.read();
