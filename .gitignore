@@ -129,9 +129,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-0-main.js
-1-main.js
-101-main.js
-3-main.js
-6-main.js
-100-main.js
+*-main.js
+*-main_*.js
