@@ -14,6 +14,7 @@ const app = http.createServer((req, res) => {
   } else if (parsedUrl.pathname === '/students') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
+    let output = 'This is the list of our students\n';
 
     fs.readFile(DATABASE, 'utf8')
       .then((data) => {
@@ -29,15 +30,16 @@ const app = http.createServer((req, res) => {
           }
         }
         const totalStudents = lines.length;
-        let output = `This is the list of our students\nNumber of students: ${totalStudents}\n`;
+        output += `Number of students: ${totalStudents}\n`;
         for (const [field, students] of Object.entries(fields)) {
           output += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
         }
-        res.end(output.trim()); // Remove the extra newline
+        res.end(output.trim());
       })
       .catch(() => {
         res.statusCode = 500;
-        res.end('Cannot load the database');
+        output += 'Cannot load the database\n';
+        res.end(output.trim());
       });
   } else {
     res.statusCode = 404;
