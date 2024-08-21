@@ -1,6 +1,5 @@
-const request = require('request');
 const { expect } = require('chai');
-
+const request = require('request');
 const baseUrl = 'http://localhost:7865';
 
 describe('Index Page', () => {
