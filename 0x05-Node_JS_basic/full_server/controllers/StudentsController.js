@@ -1,20 +1,20 @@
-import readDatabase from '../utils.js';
+import readDatabase from '../utils';
 
 class StudentsController {
   static async getAllStudents(_, res) {
     try {
       const students = await readDatabase(process.argv[2]);
       let output = 'This is the list of our students\n';
-      const sortedFields = Object.keys(students).sort((a, b) =>
-        a.toLowerCase().localeCompare(b.toLowerCase())
-      );
+      const sortedFields = Object
+        .keys(students)
+        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
       for (const field of sortedFields) {
         const studentList = students[field].join(', ');
         output += `Number of students in ${field}: ${students[field].length}. List: ${studentList}\n`;
       }
-      res.status(200).send(output.trim());
+      return res.status(200).send(output.trim());
     } catch (error) {
-      res.status(500).send('Cannot load the database');
+      return res.status(500).send('Cannot load the database');
     }
   }
 
@@ -30,9 +30,9 @@ class StudentsController {
       }
       const studentList = students[major].join(', ');
       const output = `List: ${studentList}`;
-      res.status(200).send(output);
+      return res.status(200).send(output);
     } catch (error) {
-      res.status(500).send('Cannot load the database');
+      return res.status(500).send('Cannot load the database');
     }
   }
 }
